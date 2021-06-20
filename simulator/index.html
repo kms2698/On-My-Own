@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>  
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./common/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="enchant">
+            <div class="action">
+                <button class="enchant-btn1"></button>
+                <button class="enchant-btn2"></button>
+            </div>
+            <div class="enc_main">
+                <div class="enc_1">
+                    <div class="enc_1_1">
+                        강화 보장 <img src="img/info.png" width="14" height="13">
+                    </div>
+                    <span class="guarantee"></span>
+                </div>
+                <div class="enc_2">
+                    <div>
+                        <img src="img/001.png" width="45" height="45">
+                    </div>
+                </div>
+                <div class="enc_3">
+                    <div class="enc_3_1">
+                        강화 내구도 <img src="img/info.png" width="14" height="13">
+                    </div>
+                    <div class="enc_3_2">
+                        <img src="img/dura_3.png" width="35" height="19">
+                    </div>
+                </div>
+            </div>
+            <div class="enc_name">
+                <span class="rank"></span>
+                <span class="name"></span>
+            </div>
+            <div class="enc_table">
+                <div class="enc_tb">
+                    <div class="feature">강화 단계</div>
+                    <span class="reinforced_a"></span>
+                    <div class="arrow">
+                        <img src="img/arrow_1.png" width="15" height="15">
+                    </div>
+                    <span class="reinforced_b"></span>
+                </div>
+                <div class="enc_tb">
+                    <div class="feature">최소파괴력</div>
+                    <div class="reinforced_main">
+                        <div class="reinforced_a1">22,984</div>
+                        <div class="arrow">
+                            <img src="img/arrow_2.png" width="15" height="15">
+                        </div>
+                        <div class="reinforced_b1">24,514</div>
+                    </div>
+                </div>
+                <div class="enc_tb">
+                    <div class="feature">최대파괴력</div>
+                    <div class="reinforced_main">
+                        <div class="reinforced_a1">38,157</div>
+                        <div class="arrow">
+                            <img src="img/arrow_2.png" width="15" height="15">
+                        </div>
+                        <div class="reinforced_b1">40,857</div>
+                    </div>
+                </div>
+                <div class="enc_tb">
+                    <div class="feature">피해저항관통</div>
+                    <div class="reinforced_main">
+                        <div class="reinforced_a1">170</div>
+                        <div class="arrow">
+                            <img src="img/arrow_2.png" width="15" height="15">
+                        </div>
+                        <div class="reinforced_b1">220</div>
+                    </div>
+                    
+                </div>
+                <div class="enc_tb1">
+                    <div class="feature">기본 재료</div>
+                    <div class="material">
+                        <div class="m_1">
+                            <img src="img/enchant_sheet.png" width="17" height="17">
+                            무기 강화비서
+                        </div>
+                        <div class="m_2">
+                            <span class="enchant_sheet"></span>
+                        </div>
+                        <div class="m_3">/</div>
+                        <div class="m_4">
+                            6
+                        </div>
+                        <div class="m_5">
+                            <img src="img/mat_info.png" width="17" height="17">
+                        </div>
+                    </div>
+                </div>
+                <div class="enc_addition">
+                    <div class="enc_addition1">
+                        추가<br>재료
+                    </div>
+                    <div class="enc_addition2">
+                        <div class="material_add">
+                            <div class="m_1">
+                                <img src="img/enchant_secret.png" width="17" height="17">
+                                강화비급
+                                <img src="img/secret_change.png" width="16" height="16">
+                            </div>
+                            <div class="m_2">
+                                <span class="enchant_secret"></span>
+                            </div>
+                            <div class="m_3">/</div>
+                            <div class="m_4">
+                                12
+                            </div>
+                            <div class="m_5">
+                                <img src="img/mat_info.png" width="17" height="17">
+                            </div>
+                        </div>
+        
+                        <div class="material_add">
+                            <div class="m_1">
+                                <img src="img/accelerator.png" width="17" height="17">
+                                강화촉진제
+                                <img src="img/background_2.png" width="16" height="16">
+                            </div>
+                            <div class="m_2">
+                                <span class="accelerator"></span>
+                            </div>
+                            <div class="m_3">/</div>
+                            <div class="m_4">
+                                12
+                            </div>
+                            <div class="m_5">
+                                <img src="img/mat_info.png" width="17" height="17">
+                            </div>
+                        </div>
+                        
+                        <div class="material_add">
+                            <div class="m_1">
+                                <img src="img/stabilizer.png" width="17" height="15">
+                                강화안정제
+                            </div>
+                            <div class="m_2">
+                                <span class="stabilizer"></span>
+                            </div>
+                            <div class="m_3">/</div>
+                            <div class="m_4">12</div>
+                            <div class="m_5">
+                                <img src="img/mat_info.png" width="17" height="17">
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                <div class="enc_tb">
+                    <div class="feature">기본 확률</div>
+                    <div class="material_chance">
+                        <span class="chance"></span>%
+                    </div>
+                    <div class="feature">추가 확률</div>
+                    <div class="chance_g">0%</div>
+                </div>
+                <div>
+                    <button class="enchant-btn3">
+                        1,800
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
