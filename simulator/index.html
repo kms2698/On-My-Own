@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Game</title>  
+    <title>청일기창 키우기</title>  
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="./common/js/common.js"></script>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="enc_2">
                     <div>
-                        <img src="img/001.png" width="45" height="45">
+                        <img src="img/청일기창.png" width="45" height="45">
                     </div>
                 </div>
                 <div class="enc_3">
@@ -43,39 +43,39 @@
                 <div class="enc_tb">
                     <div class="feature">강화 단계</div>
                     <span class="reinforced_a"></span>
-                    <div class="arrow">
+                    <div class="arrow_y">
                         <img src="img/arrow_1.png" width="15" height="15">
                     </div>
                     <span class="reinforced_b"></span>
                 </div>
                 <div class="enc_tb">
-                    <div class="feature">최소파괴력</div>
+                    <div class="feature_1">최소파괴력</div>
                     <div class="reinforced_main">
-                        <div class="reinforced_a1">22,984</div>
-                        <div class="arrow">
+                        <span class="reinforced_a1"></span>
+                        <div class="arrow_w">
                             <img src="img/arrow_2.png" width="15" height="15">
                         </div>
-                        <div class="reinforced_b1">24,514</div>
+                        <span class="reinforced_b1"></span>
                     </div>
                 </div>
                 <div class="enc_tb">
-                    <div class="feature">최대파괴력</div>
+                    <div class="feature_1">최대파괴력</div>
                     <div class="reinforced_main">
-                        <div class="reinforced_a1">38,157</div>
-                        <div class="arrow">
+                        <span class="reinforced_a2"></span>
+                        <div class="arrow_w">
                             <img src="img/arrow_2.png" width="15" height="15">
                         </div>
-                        <div class="reinforced_b1">40,857</div>
+                        <span class="reinforced_b2"></span>
                     </div>
                 </div>
                 <div class="enc_tb">
-                    <div class="feature">피해저항관통</div>
+                    <div class="feature_1">피해저항관통</div>
                     <div class="reinforced_main">
-                        <div class="reinforced_a1">170</div>
-                        <div class="arrow">
+                        <div class="reinforced_a3"></div>
+                        <div class="arrow_w">
                             <img src="img/arrow_2.png" width="15" height="15">
                         </div>
-                        <div class="reinforced_b1">220</div>
+                        <div class="reinforced_b3"></div>
                     </div>
                     
                 </div>
@@ -115,6 +115,7 @@
                             <div class="m_3">/</div>
                             <div class="m_4">
                                 12
+                                <input type="checkbox" id="box1"><label for="box1"></label>
                             </div>
                             <div class="m_5">
                                 <img src="img/mat_info.png" width="17" height="17">
@@ -133,6 +134,7 @@
                             <div class="m_3">/</div>
                             <div class="m_4">
                                 12
+                                <input type="checkbox" id="box2"><label for="box2"></label>
                             </div>
                             <div class="m_5">
                                 <img src="img/mat_info.png" width="17" height="17">
@@ -148,14 +150,17 @@
                                 <span class="stabilizer"></span>
                             </div>
                             <div class="m_3">/</div>
-                            <div class="m_4">12</div>
+                            <div class="m_4">
+                                12
+                                <input type="checkbox" id="box3"><label for="box3"></label>
+                            </div>
                             <div class="m_5">
                                 <img src="img/mat_info.png" width="17" height="17">
                             </div>
                         </div>
                     </div>   
                 </div>
-                <div class="enc_tb">
+                <div class="enc_tb2">
                     <div class="feature">기본 확률</div>
                     <div class="material_chance">
                         <span class="chance"></span>%
@@ -165,8 +170,37 @@
                 </div>
                 <div>
                     <button class="enchant-btn3">
-                        1,800
+                        <span class="cost"></span>
                     </button>
+                </div>
+                <div class="inven">
+                    <span class="money"></span>
+                </div>
+                <div class="inventory">
+                    <div class="inven_line">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                    </div>
+                    <div class="inven_line">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                    </div>
+                    <div class="inven_line">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                        <img src="img/inven_1.png" width="45" height="45">
+                    </div>
                 </div>
             </div>
         </div>
