@@ -71,6 +71,9 @@ function rendering() {
     $(".reinforced_main .reinforced_b1").text(comma(weaponList[user.weapon+1].min));
     $(".reinforced_main .reinforced_b2").text(comma(weaponList[user.weapon+1].max));
     $(".reinforced_main .reinforced_b3").text(comma(weaponList[user.weapon+1].pierce));
+    $(".reinforced_main .reinforced_c1").text(comma(weaponList[user.weapon+1].min - weaponList[user.weapon].min));
+    $(".reinforced_main .reinforced_c2").text(comma(weaponList[user.weapon+1].max - weaponList[user.weapon].max));
+    $(".reinforced_main .reinforced_c3").text(comma(weaponList[user.weapon+1].pierce - weaponList[user.weapon].pierce));
 
 }
 
@@ -79,14 +82,17 @@ function comma(s) {
 }
 
 function enchant() {
-    if (user.money >= weaponList[user.weapon].cost) {
+    if(user.money >= weaponList[user.weapon].cost) {
         user.money -= weaponList[user.weapon].cost
-        if (chance(weaponList[user.weapon].chance)) {
+        if(chance(weaponList[user.weapon].chance)) {
             user.weapon++;
-        } else {
+        } 
+        else if (document.getElementById("box3").checked == true){
+            user.stabilizer = user.stabilizer - enchantCost[user.weapon].stabilizer;
+        }
+        else{
             user.weapon--;
         }
-
         rendering();
     } else {
         alert("돈이 부족합니다.");
