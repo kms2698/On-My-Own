@@ -3,6 +3,9 @@ $(function () {
     $(".enchant-btn3").on("click", function () {
         enchant();
     });
+    $(".test").on("click", function(){
+        showPopup();
+    });
 });
 // 강화단계, 이름, 등급, 강화보장, 강화내구도, 강화확률, 최소파괴력, 최대파괴력, 피해저항관통
 var weaponList = [  
@@ -33,6 +36,16 @@ var weaponList = [
 var enchantCost = [
     { reinforced: 0, cost: 1000, sheet: 6,secret: 5, accelerator:5, stabilizer:4}
 ]
+var enchantSheet = {
+    first: 3,
+    second: 5,
+    third : 7
+}
+
+var state = {
+    stable: "강화보장구간",
+    unstable: "강화안정제"
+}
 
 var user = {
     weapon: 0,
@@ -58,6 +71,15 @@ function rendering() {
     $(".material_add .enchant_secret").text(user.enchant_secret);
     $(".material_add .accelerator").text(user.accelerator);
     $(".material_add .stabilizer").text(user.stabilizer);
+
+    if(weaponList[user.weapon].reinforced > weaponList[user.weapon].guarantee ){
+        $(".material_add .state").text(state.unstable);
+        document.getElementById("item3").src = "img/stabilizer_1.png";
+    } else{
+        $(".material_add .state").text(state.stable);
+        document.getElementById("item3").src = "img/stabilizer.png";
+
+    }
     $(".inven .money").text(comma(user.money));
     $(".enchant-btn3 .cost").text(comma(weaponList[user.weapon].cost));
     $(".reinforced_main .reinforced_a1").text(comma(weaponList[user.weapon].min));
@@ -69,6 +91,10 @@ function rendering() {
     $(".reinforced_main .reinforced_c1").text(comma(weaponList[user.weapon+1].min - weaponList[user.weapon].min));
     $(".reinforced_main .reinforced_c2").text(comma(weaponList[user.weapon+1].max - weaponList[user.weapon].max));
     $(".reinforced_main .reinforced_c3").text(comma(weaponList[user.weapon+1].pierce - weaponList[user.weapon].pierce));
+    if(document.getElementById("box1").checked == true){
+        $(".enc_tb2 .chance_g").text(enchantSheet.first);
+        rendering();
+    }
 
 }
 
@@ -79,14 +105,28 @@ function comma(s) {
 function enchant() {
     if(user.money >= weaponList[user.weapon].cost) {
         user.money -= weaponList[user.weapon].cost
+
+        if(weaponList[user.weapon].reinforced >= weaponList[user.weapon].guarantee){
+            alert("강화 보장 구간이 아닙니다. 강화 실패시, 강화 내구도 또는 강화 단계가 감소될 수 있습니다. ")
+        }
+
         if(chance(weaponList[user.weapon].chance)) {
-            user.weapon++;
+            if(document.getElementById("box2").checked == true){
+                if (chance(50)) {
+                    alert("강화대성공!")
+                    user.weapon = user.weapon + 2;
+                }
+            } else{
+                alert("강화성공")
+                user.weapon++;
+            }
         } 
-        // 강화안정제 사용시
         else if (document.getElementById("box3").checked == true){
+            alert("강화유지")
             user.stabilizer = user.stabilizer - enchantCost[user.weapon].stabilizer;
         }
         else{
+            alert("강화실패")
             user.weapon--;
         }
         rendering();
@@ -100,4 +140,8 @@ function chance(percent) {
         return true;
     else
         return false;
+}
+
+function showPopup(){
+    window.open("warning.html", "a", "width=300, height=200, left=100, top=150");
 }

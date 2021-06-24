@@ -310,3 +310,32 @@ input[type=checkbox] + label {
 input[type=checkbox]:checked + label {
     background-image: url('./img/check_on.png');
 }
+/* 강화경고.html */
+.warning_main{
+    background-image: url("img/warning.png");
+    background-size: 332px 220px;
+    width: 332px;
+    height: 220px;
+}
+.warning-btn1{
+    background-image: url("img/cancel_button.png");
+    background-size: 100px 40px;
+    width: 100px;
+    height: 40px;
+    margin-top: 125px;
+    margin-left: 65px;
+}
+.warning-btn2{
+    background-image: url("img/confirm_button.png");
+    background-size: 100px 40px;
+    width: 100px;
+    height: 40px;
+}
+.warning-close{
+    background-image: url("img/close_button.png");
+    background-size: 37px 35px;
+    width: 37px;
+    height: 35px;
+    margin-top: 6px;
+    margin-left: 282px;
+}
