@@ -1,10 +1,5 @@
 $(function () {
     rendering();
-
-    $(".sell-btn").on("click", function () {
-        sell();
-    });
-
     $(".enchant-btn3").on("click", function () {
         enchant();
     });
@@ -87,6 +82,7 @@ function enchant() {
         if(chance(weaponList[user.weapon].chance)) {
             user.weapon++;
         } 
+        // 강화안정제 사용시
         else if (document.getElementById("box3").checked == true){
             user.stabilizer = user.stabilizer - enchantCost[user.weapon].stabilizer;
         }
